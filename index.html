@@ -66,10 +66,9 @@
             color: #e74c3c;
             margin-right: 10px;
         }
-        .download-btn, .zoom-btn {
+        .download-btn, .zoom-btn, .email-btn {
             display: inline-block;
             padding: 15px 40px;
-            background: linear-gradient(45deg, #ff6b6b, #f1c40f);
             color: #fff;
             text-decoration: none;
             font-size: 1.2em;
@@ -78,10 +77,24 @@
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-        .download-btn:hover, .zoom-btn:hover {
+        .download-btn {
+            background: linear-gradient(45deg, #ff6b6b, #f1c40f);
+        }
+        .zoom-btn {
+            background: linear-gradient(45deg, #ff6b6b, #f1c40f);
+        }
+        .email-btn {
+            background: linear-gradient(45deg, #8e44ad, #3498db);
+        }
+        .download-btn:hover, .zoom-btn:hover, .email-btn:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        .download-btn:hover, .zoom-btn:hover {
             background: linear-gradient(45deg, #f1c40f, #ff6b6b);
+        }
+        .email-btn:hover {
+            background: linear-gradient(45deg, #3498db, #8e44ad);
         }
         .footer {
             text-align: center;
@@ -89,8 +102,12 @@
             font-size: 0.9em;
             color: #7f8c8d;
         }
+        iframe {
+            border-radius: 10px;
+            margin-top: 20px;
+        }
 
-        /* Animations */
+        /* Animations - Keeping only for container and list items */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -113,7 +130,8 @@
         <p>Dive into the world of economics tailored for managers with this engaging exercise by Dr. Shay Tsaban. Designed to empower decision-makers, this course blends theory with practical insights to navigate today’s dynamic business landscape.</p>
 
         <h2>About Dr. Shay Tsaban</h2>
-        <p>Dr. Shay Tsaban, a Senior Lecturer at Peres Academic Center, brings a wealth of expertise to this course. With a PhD from Ariel University and a focus on the "Economics of Happiness," he combines accounting, finance, and behavioral economics in his teaching and research. A CPA and MBA holder, Dr. Tsaban has explored how corporate happiness impacts managers, shareholders, and customers. This is his final semester at Peres, and he’s determined to go out with a bang—delivering an unforgettable learning experience. Have questions or feedback? Reach out to him at <a href="mailto:shay.tsaban@gmail.com">shay.tsaban@gmail.com</a>.</p>
+        <p>Dr. Shay Tsaban, a Senior Lecturer at Peres Academic Center, brings a wealth of expertise to this course. With a PhD from Ariel University and a focus on the "Economics of Happiness," he combines accounting, finance, and behavioral economics in his teaching and research. A CPA and MBA holder, Dr. Tsaban has explored how corporate happiness impacts managers, shareholders, and customers. This is his final semester at Peres, and he’s determined to go out with a bang—delivering an unforgettable learning experience.</p>
+        <a href="mailto:shay.tsaban@gmail.com" class="email-btn">Contact Dr. Tsaban ✉️</a>
 
         <h2>What Can You Find Here?</h2>
         <ul>
@@ -135,6 +153,9 @@
 
         <h2>Recordings</h2>
         <p>Watch the exercise recordings here—easy peasy, no password required:</p>
+        <p><strong>Exercise 1 - 24.3.2025 - PPF and Basic Cost Calculations</strong></p>
+        <p>In this very first exercise, we studied what is the marginal product, how to draw the PPF curve ("Akumat Ha'Tmura") ✏️, and how to calculate alternative cost, average cost, and marginal cost 💰. You can solve question 1 from Homework Assignment #1 in the Main site based on this guidance—go crush it! 🚀</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/cjNMjZOyU7w" title="Exercise 1 Recording" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <p><em>To be continued... Recordings are uploaded approximately 24 hours after each meeting.</em></p>
 
         <h2>Live Zoom Meetings - Access Zoom Meetings Here</h2>
@@ -147,26 +168,5 @@
             <p><em>Updated as of March 24, 2025</em></p>
         </div>
     </div>
-
-    <script>
-        // Add subtle scroll animation for sections
-        window.addEventListener('scroll', () => {
-            const elements = document.querySelectorAll('.container > *');
-            elements.forEach((el, index) => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight - 100) {
-                    el.style.opacity = '1';
-                    el.style.transform = 'translateY(0)';
-                    el.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
-                }
-            });
-        });
-
-        // Initial state for scroll animation
-        document.querySelectorAll('.container > *').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-        });
-    </script>
 </body>
 </html>
